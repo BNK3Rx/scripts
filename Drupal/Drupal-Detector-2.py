@@ -15,7 +15,6 @@ headers = {'User-Agent': 'Mozilla 5.0'}
 def run(u):
     try:
         url = u + '/misc/drupal.js' 
-        r = requests.post(url, verify=False, headers=headers)
         if 'Drupal' in requests.get(u+'/misc/drupal.js', verify=False, headers=headers).text:
             print ('\n\aDrupal:', u + '/misc/drupal.js\n')
             with open('drudru2.txt', mode='a') as d:
